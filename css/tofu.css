@@ -1,0 +1,142 @@
+:root {
+    --txt-color: white;
+    --hv-txt-color: black;
+
+    --border-color: white;
+    --hv-border-color: black;
+
+    --bg-color: rgba(255, 255, 255, 0);
+    --hv-bg-color: rgba(255, 255, 255, 0.2);
+
+    --font-color: white;
+    --hv-font-color: black;
+    --bg-light: url('https://yun.umfintech.com/agentfile/group2/M00/1C/72/rBTsjWa9neyAWjuBAAAB7UCrLgk912.png');
+    --bg-dark: url('https://yun.umfintech.com/agentfile/group2/M00/1C/64/rBTsjWa7NluAFqpcAAABlvsEdT0805.png');
+    --bg-image: var(--bg-dark);
+}
+
+body {
+    background-image: var(--bg-image);
+}
+
+#tf_theme {
+    position: fixed;
+    right: 0;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.tf_file {
+    border: 1px solid var(--border-color);
+    padding: 10px 20px;
+    font-size: 14px;
+    color: var(--font-color);
+    background-color: var(--bg-color);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px var(--bg-color);
+    width: 50%;
+    position: relative;
+    transition: color 0.3s, background-color 0.3s, box-shadow 0.3s ease-out;
+}
+
+.tf_file > label {
+    border-right: 1px solid var(--border-color);
+    padding: 10px 20px;
+    position: relative;
+    left: -20px;
+}
+
+.tf_file > input {
+    padding: 10px 0;
+    border: 1px solid orange;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+}
+
+.tf_bt {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: var(--font-color);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px var(--bg-color);
+    transition: color 0.3s, border 0.3s, background-color 0.3s, box-shadow 0.3s ease-out;
+}
+
+.tf_input {
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    color: var(--font-color);
+    font-size: 14px;
+
+    background-color: var(--bg-color);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px var(--bg-color);
+    transition: color 0.3s, border 0.3s, background-color 0.3s, box-shadow 0.3s ease-out;
+}
+
+.tf_input > input {
+    padding: 10px 20px;
+    color: var(--font-color);
+    background-color: var(--bg-color);
+    font-size: 14px;
+    border: none;
+    outline: none;
+}
+
+.tf_alert {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px var(--bg-color);
+    z-index: 100;
+}
+
+.tf_alert > div {
+    padding: 1em;
+    margin: 10% auto;
+    border: 2px solid var(--border-color);
+    width: 80%;
+
+    background-color: var(--bg-color);
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 10px 10px var(--hv-bg-color);
+    z-index: 101;
+}
+
+.tf_alert >div > svg {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.tf_alert > div > p {
+    color: var(--font-color);
+}
+
+.tf_bt:hover, .tf_file:hover, .tf_input:hover {
+    background-color: var(--hv-bg-color);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px var(--bg-color);
+    transition: background-color 0.3s, box-shadow 0.3s ease-in;
+}
+
+.tf_bt:active, .tf_file:active, .tf_input:active {
+    box-shadow: 0 0 10px var(--border-color);
+    transition: box-shadow 0.3s;
+}
+
+.no_select, .tf_bt, .tf_file, #tf_theme, .tf_alert{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
