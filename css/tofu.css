@@ -10,6 +10,7 @@
 
     --font-color: white;
     --hv-font-color: black;
+    --font-color-b: orangered;
     --bg-light: url('https://yun.umfintech.com/agentfile/group2/M00/1C/72/rBTsjWa9neyAWjuBAAAB7UCrLgk912.png');
     --bg-dark: url('https://yun.umfintech.com/agentfile/group2/M00/1C/64/rBTsjWa7NluAFqpcAAABlvsEdT0805.png');
     --bg-image: var(--bg-dark);
@@ -21,6 +22,7 @@ body {
 
 #tf_theme {
     position: fixed;
+    top: 0;
     right: 0;
     z-index: 99;
     cursor: pointer;
@@ -32,7 +34,6 @@ body {
     font-size: 14px;
     color: var(--font-color);
     background-color: var(--bg-color);
-    backdrop-filter: blur(10px);
     box-shadow: 0 0 10px var(--bg-color);
     width: 50%;
     position: relative;
@@ -48,7 +49,7 @@ body {
 
 .tf_file > input {
     padding: 10px 0;
-    border: 1px solid orange;
+    /*border: 1px solid orange;*/
     position: absolute;
     top: 0;
     left: 0;
@@ -62,7 +63,6 @@ body {
     color: var(--font-color);
     border: 1px solid var(--border-color);
     background-color: var(--bg-color);
-    backdrop-filter: blur(10px);
     box-shadow: 0 0 10px var(--bg-color);
     transition: color 0.3s, border 0.3s, background-color 0.3s, box-shadow 0.3s ease-out;
 }
@@ -74,8 +74,7 @@ body {
     font-size: 14px;
 
     background-color: var(--bg-color);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 10px var(--bg-color);
+    box-shadow: 0 0 30px var(--bg-color);
     transition: color 0.3s, border 0.3s, background-color 0.3s, box-shadow 0.3s ease-out;
 }
 
@@ -91,6 +90,7 @@ body {
 .tf_alert {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: var(--bg-color);
@@ -111,7 +111,7 @@ body {
     z-index: 101;
 }
 
-.tf_alert >div > svg {
+.tf_alert > div > svg {
     position: fixed;
     top: 10px;
     right: 10px;
@@ -122,19 +122,42 @@ body {
     color: var(--font-color);
 }
 
-.tf_bt:hover, .tf_file:hover, .tf_input:hover {
+.tf_select {
+    padding: 10px 0 10px 20px;
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+    color: var(--font-color);
+
+    background-color: var(--bg-color);
+    box-shadow: 0 0 10px var(--bg-color);
+}
+
+.tf_select > select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    margin: 0;
+
+    padding: 10px 20px;
+    background: var(--bg-color);
+    color: var(--font-color-b);
+    font-size: 14px;
+}
+
+.tf_bt:hover, .tf_file:hover, .tf_input:hover, .tf_select:hover {
     background-color: var(--hv-bg-color);
-    backdrop-filter: blur(10px);
     box-shadow: 0 0 10px var(--bg-color);
     transition: background-color 0.3s, box-shadow 0.3s ease-in;
 }
 
-.tf_bt:active, .tf_file:active, .tf_input:active {
+.tf_bt:active, .tf_file:active, .tf_input:active, .tf_select:active {
     box-shadow: 0 0 10px var(--border-color);
     transition: box-shadow 0.3s;
 }
 
-.no_select, .tf_bt, .tf_file, #tf_theme, .tf_alert{
+.no_select, .tf_bt, .tf_file, #tf_theme, .tf_alert, .tf_select {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

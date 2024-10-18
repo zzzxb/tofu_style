@@ -6,24 +6,41 @@
 </head>
 <link href="./css/tofu.css" rel="stylesheet">
 <script src="./js/tofu.js" defer></script>
+<style>
+  *{
+      margin: 10px;
+  }
+</style>
 <body>
 <div id="tf_theme"></div>
 
 <div class="tf_file">上传文件</div>
 
-<label class="tf_input">
-  账号
-  <input type="text">
-</label>
-<br>
-<label class="tf_input">
-  密码
-  <input type="password">
-</label>
-<br>
-<button class="tf_bt" onclick="createAlert('告警窗口')">提交</button>
-<button class="tf_bt" onclick="createAlert('告警窗口', true)">Submit</button>
+<div>
+  <label class="tf_input">
+    账号
+    <input type="text">
+  </label>
+  <label class="tf_input">
+    密码
+    <input type="password">
+  </label>
+</div>
 
+<div>
+  <button class="tf_bt" onclick="createAlert('告警窗口')">提交</button>
+  <button class="tf_bt" onclick="createAlert('告警窗口', true)">Submit</button>
+</div>
 
+<div>
+  <label class="tf_select">
+    性别
+    <select>
+      <option selected disabled>请选择</option>
+      <option>男</option>
+      <option>女</option>
+    </select>
+  </label>
+</div>
 </body>
 </html>
